@@ -5,7 +5,12 @@
     Homepage
 {% endblock %}
 
-{% block body_block %}
+{% if user.is_authenticated %}
+    <p>Howdy {{ user.username }}!</p>
+{% else %}
+    <p>Hey there partner!</p>
+{% endif %}
+
     <h1>Rango says...</h1>
     <div>
         hey there partner! <br />
